@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from chatbot_app.views import ChatbotView
 
 urlpatterns = [
     path('',views.getData),
@@ -8,5 +9,6 @@ urlpatterns = [
     path('agent/create/', views.create_agent, name='create_agent'),
     path('agent/<int:pk>/', views.agent_detail, name='agent_detail'),
     path('client/create/', views.create_client, name='create_client'),
+     path('chatbot/', ChatbotView.as_view(), name='chatbot'),
     
 ]
